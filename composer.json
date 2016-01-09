@@ -1,0 +1,22 @@
+{
+    "name": "lezhnev/google-analytics-card",
+    "description": "Simple html card creator from google analytics data",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Dmitriy Lezhnev",
+            "email": "meekman74@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AnalyticsCard\\": "src/"
+        }
+    }
+}

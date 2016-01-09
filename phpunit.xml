@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/bootstrap.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Google Analytics Card renderer Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="TIMEZONE" value="Europe/Moscow"/>
+        <env name="TRACKING_ID" value="UA-59699402-11"/>
+        <env name="SERVICE_EMAIL" value="analytics@analyticsrealtimeapi.iam.gserviceaccount.com"/>
+        <env name="ACCESS_FILE_P12" value="tests/static/AnalyticsRealTimeApi-983a1b5449d3.p12"/>
+        <env name="ACCESS_FILE_JSON" value="tests/static/AnalyticsRealTimeApi-aa5eb665cc86.json"/>
+    </php>
+</phpunit>
