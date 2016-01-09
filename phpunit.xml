@@ -12,6 +12,5 @@
         <env name="TRACKING_ID" value="UA-59699402-11"/>
         <env name="SERVICE_EMAIL" value="analytics@analyticsrealtimeapi.iam.gserviceaccount.com"/>
         <env name="ACCESS_FILE_P12" value="tests/static/AnalyticsRealTimeApi-983a1b5449d3.p12"/>
-        <env name="ACCESS_FILE_JSON" value="tests/static/AnalyticsRealTimeApi-aa5eb665cc86.json"/>
     </php>
 </phpunit>
