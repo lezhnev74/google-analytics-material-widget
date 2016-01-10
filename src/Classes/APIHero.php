@@ -9,7 +9,7 @@ use AnalyticsCard\Classes\Row;
 class APIHero
 {
 
-    private $period = "7days";
+    private $period = "7daysAgo";
     private $path = "/";
     private $limit = 5;
     private $service = null;
@@ -42,9 +42,9 @@ class APIHero
      *
      * @param $string
      */
-    public function setPeriod($string)
+    public function setPeriod($days)
     {
-        $this->period = $string;
+        $this->period = intval($days)."daysAgo";
     }
 
     /**
@@ -78,7 +78,7 @@ class APIHero
         $countries = [];
 
         $results = $this->request(
-            '120daysAgo',
+            $this->period,
             'today',
             'ga:avgTimeOnPage,ga:users',
             [
@@ -111,7 +111,7 @@ class APIHero
         $cities = [];
 
         $results = $this->request(
-            '120daysAgo',
+            $this->period,
             'today',
             'ga:avgTimeOnPage,ga:users',
             [
@@ -140,7 +140,7 @@ class APIHero
      * @param $data
      * @return \Google_Service_Analytics_GaData
      */
-    private function request($date_from,$date_to="today",$metrics,$args=[])
+    private function request($date_from,$date_to,$metrics,$args=[])
     {
         $cache_key = md5(json_encode(func_get_args()));
 

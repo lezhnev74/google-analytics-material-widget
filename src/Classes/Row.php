@@ -27,7 +27,7 @@ class Row implements RowInterface {
 
     public function getTitle()
     {
-        return $this->title." ".$this->title;
+        return $this->title;
     }
 
     public function getUsers()

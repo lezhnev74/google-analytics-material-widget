@@ -10,11 +10,22 @@ class DataRender
     private $cities = [];
     private $countries = [];
     private $blade = null;
+    private $css_color = null;
 
     function __construct($view_folder, $cache_folder)
     {
         // @todo it uses Blade template - tightly coupled (but its okay for this purposes)
         $this->initBlade($view_folder, $cache_folder);
+    }
+
+    /**
+     * Set color of the card
+     *
+     * @param $color
+     */
+    public function setColor($color)
+    {
+        $this->css_color = $color;
     }
 
     public function setCountries(array $countries)
@@ -61,6 +72,7 @@ class DataRender
         $html .= $this->blade->view()->make($template, [
             "countries" => $this->countries,
             "cities"    => $this->cities,
+            'color'     => $this->css_color,
         ])->render();
 
         return $html;
