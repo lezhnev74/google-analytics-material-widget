@@ -61,13 +61,13 @@ class DataRender
     /**
      * Return HTML
      */
-    public function render($template, $include_files = true)
+    public function render($template/*, $include_files = true*/)
     {
         $html = "";
 
-        if ($include_files) {
+        /*if ($include_files) {
             $html .= $this->include_files();
-        }
+        }*/
 
         $html .= $this->blade->view()->make($template, [
             "countries" => $this->countries,
