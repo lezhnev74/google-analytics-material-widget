@@ -115,7 +115,7 @@ class APIHero
             'today',
             'ga:avgTimeOnPage,ga:users',
             [
-                "dimensions" => "ga:country,ga:city,ga:pagePath",
+                "dimensions" => "ga:countryIsoCode,ga:city,ga:pagePath",
                 "filters"    => "ga:pagePath==".$this->path,
                 "sort"       => "-ga:users"
             ]

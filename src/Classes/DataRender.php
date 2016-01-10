@@ -50,7 +50,7 @@ class DataRender
     /**
      * Return HTML
      */
-    public function render($include_files = true)
+    public function render($template, $include_files = true)
     {
         $html = "";
 
@@ -58,7 +58,7 @@ class DataRender
             $html .= $this->include_files();
         }
 
-        $html .= $this->blade->view()->make('card', [
+        $html .= $this->blade->view()->make($template, [
             "countries" => $this->countries,
             "cities"    => $this->cities,
         ])->render();

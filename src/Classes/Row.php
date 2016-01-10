@@ -27,7 +27,7 @@ class Row implements RowInterface {
 
     public function getTitle()
     {
-        return $this->title;
+        return $this->title." ".$this->title;
     }
 
     public function getUsers()
@@ -35,9 +35,59 @@ class Row implements RowInterface {
         return $this->users;
     }
 
-    public function getAvgTimeOnPage()
+    public function getAvgTimeOnPage($asFloat=false)
     {
-        return $this->avgTimeOnPage;
+        if($asFloat) {
+            return $this->avgTimeOnPage;
+        }
+
+        return self::timeForHumans($this->avgTimeOnPage);
+    }
+
+    static function timeForHumans($float_seconds) {
+        if(!$float_seconds) {
+            return "-";
+        }
+
+        if($float_seconds < 60) {
+            return (int) $float_seconds . " sec";
+        } else {
+            return round($float_seconds/60,1) . " min";
+        }
+    }
+
+    /**
+     * Return summ of all given rows users
+     *
+     * @param array $rows
+     */
+    static function sumUsers(array $rows) {
+        $sum = 0;
+
+        foreach($rows as $row) {
+            $sum += $row->getUsers();
+        }
+
+        return $sum;
+    }
+
+    /**
+     * Calculate avg time on page
+     *
+     * @param array $rows
+     */
+    static function avgTimeOnPage(array $rows) {
+        $avgSum = 0;
+        $count = 0;
+
+        foreach($rows as $row) {
+            $avgSum += $row->getAvgTimeOnPage(true);
+            $count++;
+        }
+
+        return self::timeForHumans($avgSum/$count);
+
+
     }
 
 }
