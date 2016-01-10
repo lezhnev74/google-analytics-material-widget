@@ -85,7 +85,7 @@ class Row implements RowInterface {
             $count++;
         }
 
-        return self::timeForHumans($avgSum/$count);
+        return self::timeForHumans($count?$avgSum/$count:0);
 
 
     }
