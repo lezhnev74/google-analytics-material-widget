@@ -46,7 +46,7 @@ class Row implements RowInterface {
 
     static function timeForHumans($float_seconds) {
         if(!$float_seconds) {
-            return "-";
+            return "0";
         }
 
         if($float_seconds < 60) {

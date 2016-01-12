@@ -10,27 +10,31 @@ namespace AnalyticsCard\Classes;
  */
 class Runtime {
 
+
+
     /**
      * Render view
      *
      * @param $view
      */
-    static function execute($view,$view_folder,$cache_folder,$config) {
+//    static function execute($view,$view_folder,$cache_folder,$config) {
+//
+//        $render = self::init($view_folder,$cache_folder,$config);
+//
+//        echo $render->render($view);
+//
+//
+//    }
+//
 
-        $render = self::init($view_folder,$cache_folder,$config);
-
-        echo $render->render($view);
-
-
-    }
 
 
     /**
-     * Render test view with HTML around
+     * Render view with HTML around
      *
      * @param $view
      */
-    static function test($view_folder,$cache_folder,$config) {
+    static function execute($view, $view_folder,$cache_folder,$config) {
 
         $render = self::init($view_folder,$cache_folder,$config);
 
@@ -46,12 +50,12 @@ class Runtime {
                 <link rel=\"stylesheet\" type=\"text/css\" href=\"static/include.css\" />
 
             </head>
-            <body>
+            <body style='padding:0px;'>
             <div style=''>
                 ";
                     //echo $render->render("card-horizontal");
                     //echo $render->render("card");
-                    echo $render->render("card-condensed");
+                    echo $render->render($view);
                     echo "
             </div>
             </body>
@@ -71,7 +75,14 @@ class Runtime {
         $config_root = dirname($config_path);
 
         // get stats for this page
-        $path = $_SERVER['REQUEST_URI'];
+        // make it work from iframe
+
+        $path = isset($_GET['path'])?$_GET['path']:$_SERVER['HTTP_REFERER'];
+        if(substr($path,0,4)=="http") {
+            // get relative path only
+            $path = parse_url($path, PHP_URL_PATH);
+        }
+        //$_SERVER['REQUEST_URI'];
 
 
         // CLASSES
@@ -95,6 +106,7 @@ class Runtime {
         $render->setColor($config['material_color']);
         $render->setCountries($countries);
         $render->setCities($cities);
+        $render->setDays($config['TRACKING_PERIOD_DAYS']);
 
         return $render;
     }

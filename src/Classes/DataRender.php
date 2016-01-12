@@ -11,6 +11,7 @@ class DataRender
     private $countries = [];
     private $blade = null;
     private $css_color = null;
+    private $days = null;
 
     function __construct($view_folder, $cache_folder)
     {
@@ -31,6 +32,16 @@ class DataRender
     public function setCountries(array $countries)
     {
         $this->countries = $countries;
+    }
+
+    /**
+     * SEt days period (for reporting in widget)
+     *
+     * @param $days
+     */
+    public function setDays($days)
+    {
+        $this->days = (int)$days;
     }
 
     /**
@@ -73,6 +84,7 @@ class DataRender
             "countries" => $this->countries,
             "cities"    => $this->cities,
             'color'     => $this->css_color,
+            'days'      => $this->days,
         ])->render();
 
         return $html;
