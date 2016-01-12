@@ -26,7 +26,7 @@ class RowTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($title, $this->row->getTitle());
         $this->assertEquals($users, $this->row->getUsers());
-        $this->assertEquals($avgTime, $this->row->getAvgTimeOnPage());
+        $this->assertEquals($avgTime, $this->row->getAvgTimeOnPage(true));
 
     }
 }

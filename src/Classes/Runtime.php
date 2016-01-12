@@ -77,7 +77,14 @@ class Runtime {
         // get stats for this page
         // make it work from iframe
 
-        $path = isset($_GET['path'])?$_GET['path']:$_SERVER['HTTP_REFERER'];
+        $path = "/";
+        if(isset($_GET['path'])) {
+            $path = $_GET['path'];
+        };
+        if(isset($_SERVER['HTTP_REFERER'])) {
+            $path = $_SERVER['HTTP_REFERER'];
+        }
+
         if(substr($path,0,4)=="http") {
             // get relative path only
             $path = parse_url($path, PHP_URL_PATH);
