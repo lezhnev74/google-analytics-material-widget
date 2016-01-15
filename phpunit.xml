@@ -9,8 +9,8 @@
     </testsuites>
     <php>
         <env name="TIMEZONE" value="Europe/Moscow"/>
-        <env name="TRACKING_ID" value="UA-59699402-11"/>
-        <env name="SERVICE_EMAIL" value="analytics@analyticsrealtimeapi.iam.gserviceaccount.com"/>
-        <env name="ACCESS_FILE_P12" value="tests/static/AnalyticsRealTimeApi-983a1b5449d3.p12"/>
+        <env name="TRACKING_ID" value=""/>
+        <env name="SERVICE_EMAIL" value=""/>
+        <env name="ACCESS_FILE_P12" value=""/>
     </php>
 </phpunit>

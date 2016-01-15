@@ -1,0 +1,7 @@
+IndexIgnore *
+
+<Files ~ "\.p12$">
+order allow,deny
+deny from all
+satisfy all
+</Files>

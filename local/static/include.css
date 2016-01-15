@@ -1,0 +1,130 @@
+/*
+{{--Based on https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css --}}
+*/
+
+@import url("grid.css");
+@import url("materialize.css");
+
+    .analytics_card {
+        line-height: 1.5;
+        font-family: "Roboto", sans-serif;
+        font-weight: 100;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .analytics_card .row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+
+    .analytics_card .row .col {
+        padding:0;
+    }
+
+    .analytics_card .row .col.s12 {
+        width: 100%;
+        margin-left: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .analytics_card h5 {
+        font-weight: 100;
+        margin-top:20px;
+        font-size: 1.44rem;
+        line-height: 110%;
+        margin: 0.82rem 0 0.656rem 0;
+
+    }
+
+    .analytics_card table {
+        color:inherit;
+        font-weight: 100;
+    }
+
+    .analytics_card table td {
+        padding: 5px 5px;
+    }
+
+    .info-block {
+        overflow: hidden;
+        min-width: 200px;
+    }
+    .info-block-next {
+        margin-top:20px;
+    }
+    .icon-block {
+        float:left;
+        margin-right:20px;
+        padding: 10px 10px 10px 0;
+    }
+    .icon-block img {
+        display: inline-block;
+        max-width: 50px;
+        margin:0px;
+    }
+    .value-block {
+        font-size: 2em;
+        font-weight: 100;
+    }
+    .subtitle-block {
+        font-size: 14px;
+        font-weight: 300;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .report-days {
+        font-size:0.9em;
+        margin-top:20px;
+        color: rgba(255,255,255,0.6);
+        position: absolute;
+        right:0px;
+        bottom:-15px;
+    }
+
+
+
+
+    /* card-condensed CSS */
+    .card-condensed .info-block {
+        display: inline-block;
+        min-width:170px;
+    }
+    .card-condensed .info-block-next {
+        margin:0px;
+    }
+    .card-condensed .icon-block {
+        float:left;
+        margin-right:0px;
+        padding: 10px 10px 0px 0;
+    }
+    .card-condensed .icon-block img {
+        display: inline-block;
+        max-width: 50px;
+    }
+    .card-condensed .value-block {
+
+    }
+    .card-condensed .subtitle-block {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .card-condensed .report-days {
+        right:15px;
+    }
+
+    /* card-horizontal */
+    .card-horizontal .row-with-blocks {
+        margin-bottom:0px;
+    }
+
+    .card-horizontal .info-block {
+        display: inline-block;
+        width:32%;
+        min-width: 200px;
+    }
+
