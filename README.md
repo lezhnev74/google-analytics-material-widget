@@ -1,6 +1,6 @@
 # Google Analytics Material Widget
-[![Packagist](https://img.shields.io/packagist/v/lezhnev/google-analytics-card.svg)]()
-[![Packagist](https://img.shields.io/packagist/l/lezhnev/google-analytics-card.svg)]()
+[![Packagist](https://img.shields.io/packagist/v/lezhnev74/google-analytics-card.svg)]()
+[![Packagist](https://img.shields.io/packagist/l/lezhnev74/google-analytics-card.svg)]()
 
 This widget is a simple material informer for your website.
 It looks like this:
