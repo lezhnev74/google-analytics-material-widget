@@ -15,6 +15,9 @@ Also you will need Google Developer Account (it is simple to create and covered 
 ## Installation
 Read documentation file in doc/index.html
 
+## Tests
+In order to run tests please update phpunit.xml with relevant data. 
+
 ## Support
 
 Please feel free to add PR or email me at lezhnev.work@gmail.com
