@@ -17,7 +17,7 @@ Also you will need Google Developer Account (it is simple to create and covered 
 ## Installation
 
 ```
-composer require lezhnev/google-analytics-card
+composer require lezhnev74/google-analytics-card
 ```
 
 Read documentation file in doc/index.html
