@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Google Analytics Material Widget&rdquo; Documentation by &ldquo;Dmitriy Lezhnev&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Google Analytics Material Widget&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 12/01/2016<br>
+					By: Dmitriy Lezhnev<br>
+					Email: <a href="mailto:lezhnev.work@gmail.com">lezhnev.work@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my widget. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/lezhnevd">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">File Structure</a></li>
+			<li><a href="#cssFiles">Installation</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="htmlStructure"><strong>A) File Structure</strong> - <a href="#toc">top</a></h3>
+		<p>The wigdet contains of few folders:</p>
+        <ul>
+            <li>local/</li>
+            <li>src/</li>
+            <li>vendor/</li>
+        </ul>
+        <p>"Local" folder contains customizable files and configuration, while "src" and "vendor" contains code and are not for editing or modification (unless you know what you are doing).</p>
+        
+        <b>Local folder</b>
+        <p>Inside local folder there are few files and subfolders:</p>
+        <ul>
+            <li>cache/</li>
+            <li>static/</li>
+            <li>views/</li>
+            <li>card1.php</li>
+            <li>card2.php</li>
+            <li>card3.php</li>
+            <li>config.php</li>
+            <li>test.php</li>
+        </ul>
+        
+        <p>"Cache" is used by the widget for storing temporary files. "Views" folder contains files that contorls how widget is rendered on your page - you can change them only if you have skills in HTML (it uses BLADE template engine). "Static" folder contains JS and CSS files for your widget. Local folder should be publicly accessible from the internet in order to work (see INstallation section for more details).</p>
+        
+		<hr>
+
+		<h3 id="cssFiles"><strong>B) Installation</strong> - <a href="#toc">top</a></h3>
+
+		<p>To use this script you will need:</p> 
+        <ul>
+            <li>Live website accessible from the internet.</li>
+            <li>Google Analytics account up and running.</li>
+        </ul>
+        
+        <b>1. Create Developer Service</b>
+        <p>You will need to create a google so-called "service" in order to access you Google Analyitcs data from widget. It is easy. Just follow this steps:</p>
+        <ul>
+            <li>Go to <a href="https://console.developers.google.com/flows/enableapi?apiid=analytics&credential=client_key">https://console.developers.google.com/flows/enableapi?apiid=analytics&credential=client_key</a>
+            </li>
+            <li>Select "Create a new project" and click "Continue"
+                <br><br><img src="assets/images/scr-02.jpg" style="max-width:600px;"><br><br>
+            </li>
+            <li>Then click on "Go to credentials"
+                <br><br><img src="assets/images/scr-03.jpg" style="max-width:600px;"><br><br>
+            </li>
+            <li>Click "New credentials" and select "Service account key"
+                <br><br><img src="assets/images/scr-04.jpg" style="max-width:600px;"><br><br>
+            </li>
+            <li>Select "Service account" as "New service account" and enter any name in the field.
+                <br><br><img src="assets/images/scr-05.jpg" style="max-width:600px;"><br><br>
+            </li>
+            <li>Select "p12" as key type. Click "Create".
+            </li>
+            <li>Now the ".p12" file is downloaded (find it on your harddisk)</li>
+            <li>Now click "Manage service account" and copy the service's e-mail to your clipboard.
+                <br><br><img src="assets/images/scr-06.jpg" style="max-width:600px;"><br><br>
+                <br><br><img src="assets/images/scr-07.jpg" style="max-width:600px;"><br><br>
+            </li>
+        </ul>
+        
+        <b>2. Setup Google Analytics Access</b>
+        <p>That's it. We created a service. Now let's go to your Google Analytics Account:</p>
+        <ul>
+            <li>Open "Admin" area</li>
+            <li>Select your "Property" (your website) and click "User management" in it's section
+                <br><br><img src="assets/images/scr-10.jpg" style="max-width:600px;"><br><br>
+            </li>
+            <li>Now in the form "Add permission for" insert copied e-mail and set "Read and Analyze" access level. Click "Add".
+                <br><br><img src="assets/images/scr-11.jpg" style="max-width:600px;"><br><br>
+            </li>
+            <li>Also copy your "TRACKING ID" - we will use it later (find this code, it looks like "UA-223344556-1")
+                <br><br><img src="assets/images/scr-12.jpg" style="max-width:600px;"><br><br>
+            </li>
+        </ul>
+        
+        <p>Now our service has access to our Google Analytics account. THis is what we need to make widget work!</p>
+        
+        <b>3. Configure the widget</b>
+        <p>In order to configure the script to the following:</p>
+        
+        <ul>
+            <li>Copy ".p12" file to the same folder where config.php is. (This is "local" folder)
+                <br><br><img src="assets/images/scr-20.jpg" style="max-width:200px;"><br><br>
+            </li>
+            <li>Open config.php</li>
+            <li>Insert your service's email to the field "SERVICE_EMAIL"</li>
+            <li>Insert ".p12" file's name to the field "ACCESS_FILE"</li>
+            <li>Insert your google analytics tracking id to the field "TRACKING_ID"</li>
+        </ul>
+        
+        <p>You should get something like this:</p>
+        <pre>
+&lt;?php
+
+return [
+    // Email of your service to work with Google Analytics API 
+    // Create service: https://console.developers.google.com/flows/enableapi?apiid=analytics&credential=client_key
+    "SERVICE_EMAIL"  => "somename@analyticsrealtimeapi.iam.gserviceaccount.com",
+    "ACCESS_FILE"    => "AnalyticsRealTimeApi-b2c62fF30cd.p12",
+
+    // your Google Analytics Tracking ID (of your website)
+    "TRACKING_ID"    => "UA-59731439-21",
+
+    // Period for stats show
+    // 90 means show analytics for last 90 days
+    "TRACKING_PERIOD_DAYS"           => 90,
+
+    // color of the card
+    // choose from http://materializecss.com/color.html
+    // Example: "deep-orange darken-1"
+    "material_color" => "amber darken-3",
+
+];
+        </pre>
+        
+        <b>4. Upload the widget to your server</b>
+        <p>Now upload all the widget files to some folder on your server. This folder should be accessible from the internet.</p>
+        <p>For example, let's say I uploaded widget to the "script" subfolder on my website (dimalezhnev.ru).</p>
+        <p>When it's done you need to test that everything is okay. Open the "test.php" file from your browser. In my case I will
+        open URL: "http://dimalezhnev.ru/script/local/test.php"</p>
+        <p>You should see your widget right on your page:</p>
+        
+        <img src="assets/images/scr-01.jpg" style="max-width:600px;">
+        
+        <b>5. Alright! Now edit your website template and add this lines of code to the place where you want to see your widget:</b>
+        <p>Replace "&lt;URL&gt;" with your website URL</p>
+        <pre>
+&lt;!-- GOOGLE ANALYTICS CARD WIDGET STARTS --&gt;
+&lt;script src="https://code.jquery.com/jquery-1.12.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="<URL>/script/local/static/load.js"&gt;&lt;/script&gt;
+&lt;iframe id="card-widget" src="<URL>/script/local/card3.php" seamless="seamless" frameBorder="0" scrolling="no" style="width:100%"&gt;&lt;/iframe&gt;
+&lt;!-- GOOGLE ANALYTICS CARD WIDGET ENDS --&gt;
+        </pre>
+        
+        <p>You can change widget type by changing "card3.php" to "card1.php" or "card2.php".</p>
+        
+        <p>You should get something like this:</p>
+        <img src="assets/images/scr-30.jpg" style="max-width:600px;">
+        <br><br>
+        
+        <p>Now, when I open my website I can see my banner here:</p>
+        <img src="assets/images/scr-31.jpg" style="max-width:600px;">
+        <br><br>
+        
+		<hr>
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>http://freebiesbug.com/psd-freebies/thin-rounded-icons-psd/</li>
+			<li>http://materializecss.com</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this script. As I said at the beginning, I'd be glad to help you if you have any questions relating to this script. No guarantees, but I'll do my best to assist. If you have a more general question relating to the scripts on CodeCanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Dmitriy Lezhnev</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
