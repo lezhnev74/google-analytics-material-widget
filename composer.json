@@ -2,10 +2,12 @@
     "name": "lezhnev/google-analytics-card",
     "description": "Simple html card creator from google analytics data",
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dmitriy Lezhnev",
-            "email": "meekman74@gmail.com"
+            "email": "lezhnev.work@gmail.com",
+            "homepage": "http://dimalezhnev.ru"
         }
     ],
     "require": {

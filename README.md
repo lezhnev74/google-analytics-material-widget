@@ -15,6 +15,11 @@ To run this script you will need active google analytic account and tracking ID 
 Also you will need Google Developer Account (it is simple to create and covered in documentation).
 
 ## Installation
+
+```
+composer require lezhnev/google-analytics-card
+```
+
 Read documentation file in doc/index.html
 
 ## Tests
